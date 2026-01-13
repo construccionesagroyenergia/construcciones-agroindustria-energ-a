@@ -16,6 +16,7 @@
       background: #f5f7f8;
       color: #3f3f3f;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     h1, h2, h3 {
@@ -39,12 +40,19 @@
 
     .header-content {
       padding: 40px 20px 50px;
+      position: relative;
+      z-index: 2;
     }
 
     .header-content img {
       max-width: 340px;
       width: 90%;
       margin-bottom: 20px;
+      transition: transform 0.5s;
+    }
+
+    .header-content img:hover {
+      transform: scale(1.05);
     }
 
     .header-content h1 {
@@ -52,6 +60,9 @@
       font-weight: 700;
       letter-spacing: 0.5px;
       margin: 20px 0 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.6s ease-out;
     }
 
     .header-content p {
@@ -60,6 +71,9 @@
       font-size: 17px;
       line-height: 1.6;
       color: #555555;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.6s ease-out 0.2s;
     }
 
     .btn {
@@ -72,6 +86,9 @@
       font-size: 15px;
       letter-spacing: 0.4px;
       transition: 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.6s ease-out 0.4s;
     }
 
     .btn:hover {
@@ -92,15 +109,21 @@
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #f9fbfb;
-    }
+    nav a:hover { color: #f9fbfb; }
 
     /* ===== SECCIONES ===== */
     section {
       background: #ffffff;
       padding: 60px 20px;
       margin-top: 10px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section h2 {
@@ -139,34 +162,14 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
-    .service-card.equipos {
-      border-left-color: #6a8f3a;
-    }
+    .service-card.equipos { border-left-color: #6a8f3a; }
 
-    .service-card h3 {
-      margin-top: 0;
-      font-size: 20px;
-      font-weight: 600;
-    }
-
-    .service-card ul {
-      padding-left: 18px;
-      margin: 15px 0 0;
-      line-height: 1.7;
-    }
+    .service-card h3 { margin-top: 0; font-size: 20px; font-weight: 600; }
+    .service-card ul { padding-left: 18px; margin: 15px 0 0; line-height: 1.7; }
 
     /* ===== CONFIANZA ===== */
-    .trust {
-      background: #f9fbfb;
-      padding: 70px 20px;
-    }
-
-    .trust-content {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
+    .trust { background: #f9fbfb; padding: 70px 20px; }
+    .trust-content { max-width: 900px; margin: auto; text-align: center; }
     .trust-content h2 { color: #0f8fa6; margin-bottom: 20px; }
     .trust-content p { font-size: 17px; line-height: 1.7; color: #555555; }
 
@@ -193,15 +196,12 @@
       border-top: 5px solid #0f8fa6;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .sector-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    }
+    .sector-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
     .sector-card h3 { margin-top: 0; font-size: 18px; font-weight: 600; }
     .sector-card p { font-size: 16px; line-height: 1.6; }
 
-    /* ===== GALERÍA ===== */
-    .galeria { background: #ffffff; padding: 70px 20px; }
+    /* ===== GALERÍA PARALLAX ===== */
+    .galeria { background: #ffffff; padding: 70px 20px; overflow: hidden; }
     .galeria h2 { text-align: center; color: #0f8fa6; margin-bottom: 40px; }
     .galeria-grid {
       max-width: 1100px;
@@ -209,26 +209,25 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
+      perspective: 1000px;
     }
     .galeria-grid img {
       width: 100%;
       border-radius: 6px;
       object-fit: cover;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transform: translateZ(0);
+      transition: transform 0.6s ease, box-shadow 0.3s ease;
+      will-change: transform;
+      loading: lazy;
     }
     .galeria-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     /* ===== CONTACTO ===== */
-    section.contacto p {
-      text-align: center;
-      line-height: 1.8;
-    }
-    section.contacto a {
-      color: #0f8fa6;
-    }
+    section.contacto p { text-align: center; line-height: 1.8; }
+    section.contacto a { color: #0f8fa6; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -293,14 +292,13 @@
     <img src="logo CAE.png" alt="Construcciones, Agroindustria y Energía">
     <h1>Construcciones, Agroindustria y Energía</h1>
     <p>Soluciones integrales en riego, agua potable y pozos profundos</p>
-    <a class="btn" href="https://wa.me/522222723013" target="_blank">
-      Cotiza por WhatsApp
-    </a>
+    <a class="btn" href="https://wa.me/522222723013" target="_blank">Cotiza por WhatsApp</a>
   </div>
 
   <div class="bottom-bar"></div>
 </header>
 
+<!-- SECCIONES -->
 <section id="servicios">
   <h2>Servicios</h2>
   <div class="services-grid">
@@ -334,13 +332,9 @@
   <div class="trust-content">
     <h2>Compromiso y Experiencia</h2>
     <p>
-      Somos una empresa dedicada a la ejecución de obras hidráulicas,
-      agroindustriales y energéticas, así como a la comercialización de
-      equipos especializados para cada proyecto.
+      Somos una empresa dedicada a la ejecución de obras hidráulicas, agroindustriales y energéticas, así como a la comercialización de equipos especializados para cada proyecto.
       <br><br>
-      Contamos con experiencia en proyectos agrícolas, agua potable e industriales,
-      ofreciendo soluciones confiables, cumplimiento
-      normativo y garantía en los trabajos y equipos suministrados.
+      Contamos con experiencia en proyectos agrícolas, agua potable e industriales, ofreciendo soluciones confiables, cumplimiento normativo y garantía en los trabajos y equipos suministrados.
     </p>
   </div>
 </section>
@@ -349,13 +343,9 @@
   <div class="nosotros-content">
     <h2>Nosotros</h2>
     <p>
-      Construcciones, Agroindustria y Energía es una empresa enfocada en el
-      desarrollo y ejecución de proyectos hidráulicos, agroindustriales y
-      energéticos, brindando soluciones técnicas confiables y eficientes.
+      Construcciones, Agroindustria y Energía es una empresa enfocada en el desarrollo y ejecución de proyectos hidráulicos, agroindustriales y energéticos, brindando soluciones técnicas confiables y eficientes.
       <br><br>
-      Nuestro trabajo se distingue por el cumplimiento normativo, la correcta
-      planeación de cada proyecto y el uso de equipos y materiales de calidad,
-      adaptándonos a las necesidades específicas de cada cliente.
+      Nuestro trabajo se distingue por el cumplimiento normativo, la correcta planeación de cada proyecto y el uso de equipos y materiales de calidad, adaptándonos a las necesidades específicas de cada cliente.
     </p>
   </div>
 </section>
@@ -363,49 +353,31 @@
 <section id="sectores" class="sectores">
   <h2>Sectores que atendemos</h2>
   <div class="sectores-grid">
-    <div class="sector-card">
-      <h3>Sector Agrícola</h3>
-      <p>Sistemas de riego, equipamiento de pozos y soluciones hidráulicas.</p>
-    </div>
-    <div class="sector-card">
-      <h3>Agua Potable</h3>
-      <p>Comités, redes hidráulicas y proyectos de abastecimiento.</p>
-    </div>
-    <div class="sector-card">
-      <h3>Industrial</h3>
-      <p>Infraestructura hidráulica y equipos para procesos industriales.</p>
-    </div>
-    <div class="sector-card">
-      <h3>Construcción</h3>
-      <p>Obra civil, líneas de conducción y equipamiento especializado.</p>
-    </div>
+    <div class="sector-card"><h3>Sector Agrícola</h3><p>Sistemas de riego, equipamiento de pozos y soluciones hidráulicas.</p></div>
+    <div class="sector-card"><h3>Agua Potable</h3><p>Comités, redes hidráulicas y proyectos de abastecimiento.</p></div>
+    <div class="sector-card"><h3>Industrial</h3><p>Infraestructura hidráulica y equipos para procesos industriales.</p></div>
+    <div class="sector-card"><h3>Construcción</h3><p>Obra civil, líneas de conducción y equipamiento especializado.</p></div>
   </div>
 </section>
 
 <section id="galeria" class="galeria">
   <h2>Galería de Proyectos</h2>
   <div class="galeria-grid">
-    <img src="MAGUEYERA 060.jpg" alt="Obra hidráulica">
-    <img src="estudio geofisico.jpg" alt="Estudio Geofísico">
-    <img src="IMG_2988 - copia.JPG" alt="Equipamiento de pozo">
-    <img src="perforacion san martin.jpg" alt="Instalación de equipos">
-    <img src="TREN_LOS_DURAZNOS.jpg" alt="tren de descarga">
-    <img src="BOMBA.jpg" alt="BOMBA SUMERGIBLE">
+    <img src="MAGUEYERA 060.jpg" alt="Obra hidráulica" loading="lazy">
+    <img src="estudio geofisico.jpg" alt="Estudio Geofísico" loading="lazy">
+    <img src="IMG_2988 - copia.JPG" alt="Equipamiento de pozo" loading="lazy">
+    <img src="perforacion san martin.jpg" alt="Instalación de equipos" loading="lazy">
+    <img src="TREN_LOS_DURAZNOS.jpg" alt="tren de descarga" loading="lazy">
+    <img src="VALVULAS.jpg" alt="VALVULAS" loading="lazy">
   </div>
 </section>
 
 <section id="contacto" class="contacto">
   <h2>Contacto</h2>
   <p>
-    <strong>Teléfono 1:</strong><br>
-    <a href="https://wa.me/522222723013">222 272 3013</a><br><br>
-
-    <strong>Teléfono 2:</strong><br>
-    <a href="tel:+522221438046">222 143 8046</a><br><br>
-
-    <strong>Correo:</strong><br>
-    <a href="mailto:construccionesagroindustriayenergia@outlook.com">construccionesagroindustriayenergia@outlook.com</a><br><br>
-
+    <strong>Teléfono 1:</strong><br><a href="https://wa.me/522222723013">222 272 3013</a><br><br>
+    <strong>Teléfono 2:</strong><br><a href="tel:+522221438046">222 143 8046</a><br><br>
+    <strong>Correo:</strong><br><a href="mailto:construccionesagroindustriayenergia@outlook.com">construccionesagroindustriayenergia@outlook.com</a><br><br>
     <strong>Redes sociales:</strong><br>
     <a href="https://facebook.com" target="_blank">Facebook</a> · 
     <a href="https://instagram.com" target="_blank">Instagram</a> · 
@@ -417,8 +389,7 @@
   <div class="footer-content">
     <div>
       <h4>Construcciones, Agroindustria y Energía</h4>
-      <p>Empresa dedicada a obras hidráulicas, agroindustriales y energéticas,
-      así como a la comercialización de equipos especializados.</p>
+      <p>Empresa dedicada a obras hidráulicas, agroindustriales y energéticas, así como a la comercialización de equipos especializados.</p>
     </div>
     <div>
       <h4>Contacto</h4>
@@ -436,6 +407,30 @@
 </footer>
 
 <a class="fixed" href="https://wa.me/522222723013" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
+
+<!-- ===== SCRIPT ANIMACIÓN SCROLL ===== -->
+<script>
+  const sections = document.querySelectorAll('section, .header-content h1, .header-content p, .btn');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold: 0.1});
+
+  sections.forEach(section => observer.observe(section));
+
+  // Efecto parallax simple en galería
+  const galeriaImgs = document.querySelectorAll('.galeria-grid img');
+  window.addEventListener('scroll', () => {
+    galeriaImgs.forEach(img => {
+      const speed = 0.2;
+      const offset = window.pageYOffset * speed;
+      img.style.transform = `translateY(${offset}px)`;
+    });
+  });
+</script>
 
 </body>
 </html>
