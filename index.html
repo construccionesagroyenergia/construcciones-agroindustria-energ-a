@@ -20,45 +20,45 @@
       font-family: 'Montserrat', Arial, sans-serif;
     }
 
-header {
-  background: linear-gradient(
-    to bottom,
-    #0f8fa6 0%,
-    #0f8fa6 18%,
-    #ffffff 18%,
-    #ffffff 82%,
-    #6a8f3a 82%,
-    #6a8f3a 100%
-  );
-  text-align: center;
-  padding: 90px 20px;
-}
-
-.header-content {
-  margin-top: 30px;
-}
-
-
-header img {
-  max-width: 340px;
-  max-height: 140px;
-}
-
-
-    header h1 {
-      margin: 20px 0 10px;
-      font-size: 28px;
+    /* ===== HEADER CORPORATIVO ===== */
+    .site-header {
+      text-align: center;
+      background: #ffffff;
     }
 
-    header p {
+    .top-bar {
+      height: 90px;
+      background: #0f8fa6;
+    }
+
+    .bottom-bar {
+      height: 70px;
+      background: #6a8f3a;
+    }
+
+    .header-content {
+      padding: 40px 20px 50px;
+    }
+
+    .header-content img {
+      max-width: 340px;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    .header-content h1 {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+
+    .header-content p {
       max-width: 700px;
-      margin: auto;
+      margin: 0 auto 20px;
       font-size: 16px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
       background: #0f8fa6;
       color: #ffffff;
       padding: 14px 28px;
@@ -67,6 +67,7 @@ header img {
       font-weight: 500;
     }
 
+    /* ===== SECCIONES ===== */
     section {
       background: #ffffff;
       padding: 60px 20px;
@@ -84,6 +85,7 @@ header img {
       line-height: 1.8;
     }
 
+    /* ===== FOOTER ===== */
     footer {
       background: #2f2f2f;
       color: #ffffff;
@@ -108,35 +110,10 @@ header img {
 
 <body>
 
-.site-header {
-  text-align: center;
-  background: #ffffff;
-}
+<header class="site-header">
+  <div class="top-bar"></div>
 
-.bar {
-  width: 100%;
-}
-
-.top-bar {
-  height: 90px;
-  background: #0f8fa6;
-}
-
-.bottom-bar {
-  height: 70px;
-  background: #6a8f3a;
-}
-
-.header-content {
-  padding: 40px 20px 50px;
-}
-
-.header-content img {
-  max-width: 340px;
-  width: 90%;
-  margin-bottom: 20px;
-}
-
+  <div class="header-content">
     <img src="logo CAE.png" alt="Construcciones, Agroindustria y Energía">
     <h1>Construcciones, Agroindustria y Energía</h1>
     <p>Soluciones integrales en riego, agua potable y pozos profundos</p>
@@ -145,10 +122,8 @@ header img {
     </a>
   </div>
 
-  <div class="bar bottom-bar"></div>
+  <div class="bottom-bar"></div>
 </header>
-
-
 
 <section>
   <h2>Servicios – Obras y Proyectos</h2>
