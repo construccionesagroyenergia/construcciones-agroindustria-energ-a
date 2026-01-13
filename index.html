@@ -74,6 +74,35 @@
   font-size: 15px;
   letter-spacing: 0.4px;
 }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #f9fbfb;
+  padding: 30px;
+  border-left: 6px solid #0f8fa6;
+}
+
+.service-card.equipos {
+  border-left-color: #6a8f3a;
+}
+
+.service-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.service-card ul {
+  padding-left: 18px;
+  margin: 15px 0 0;
+  line-height: 1.7;
+}
 
 
     /* ===== SECCIONES ===== */
@@ -147,24 +176,32 @@ section ul {
 </header>
 
 <section>
-  <h2>Servicios – Obras y Proyectos</h2>
-  <ul>
-    <li>Equipamiento y rehabilitación de pozos profundos</li>
-    <li>Sistemas de riego agrícola</li>
-    <li>Obra hidráulica y conducción</li>
-    <li>Instalaciones eléctricas y electromecánicas</li>
-    <li>Elaboración de carpetas CONAGUA</li>
-  </ul>
-</section>
+  <h2>Servicios</h2>
 
-<section>
-  <h2>Venta de Equipos</h2>
-  <ul>
-    <li>Bombas sumergibles y turbina vertical</li>
-    <li>Tubería PVC y ADEME</li>
-    <li>Válvulas, conexiones y medidores</li>
-    <li>Arrancadores, transformadores y tableros</li>
-  </ul>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>Obras y Proyectos</h3>
+      <ul>
+        <li>Equipamiento y rehabilitación de pozos profundos</li>
+        <li>Sistemas de riego agrícola</li>
+        <li>Obra hidráulica y líneas de conducción</li>
+        <li>Instalaciones eléctricas y electromecánicas</li>
+        <li>Elaboración de carpetas CONAGUA</li>
+      </ul>
+    </div>
+
+    <div class="service-card equipos">
+      <h3>Venta de Equipos</h3>
+      <ul>
+        <li>Bombas sumergibles y turbina vertical</li>
+        <li>Tubería PVC y ADEME</li>
+        <li>Válvulas, conexiones y medidores</li>
+        <li>Arrancadores, transformadores y tableros</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
 <section>
