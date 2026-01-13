@@ -128,6 +128,31 @@
   font-size: 18px;
   font-weight: 600;
 }
+    .galeria {
+  background: #ffffff;
+  padding: 70px 20px;
+}
+
+.galeria h2 {
+  text-align: center;
+  color: #0f8fa6;
+  margin-bottom: 40px;
+}
+
+.galeria-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
 
 
 
@@ -382,6 +407,16 @@
       <p>Obra civil, líneas de conducción y equipamiento especializado.</p>
     </div>
 
+  </div>
+</section>
+<section class="galeria">
+  <h2>Galería de Proyectos</h2>
+
+  <div class="galeria-grid">
+    <img src="img/obra1.jpg" alt="Obra hidráulica">
+    <img src="img/obra2.jpg" alt="Sistema de riego">
+    <img src="img/equipo1.jpg" alt="Equipamiento de pozo">
+    <img src="img/equipo2.jpg" alt="Instalación de equipos">
   </div>
 </section>
 
