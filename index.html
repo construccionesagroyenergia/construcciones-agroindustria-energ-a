@@ -64,16 +64,39 @@
     .sector-card { background: #fff; padding: 25px 20px; border-top: 5px solid #0f8fa6; transition: 0.3s; }
     .sector-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
 
-    /* ===== GALERÍA ===== */
-    .galeria-grid { grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 20px; }
-    .galeria-grid img {
+   /* ===== GALERÍA PROFESIONAL ===== */
+.galeria-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.galeria-item {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.galeria-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.galeria-item img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 6px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.galeria-item p {
+  margin: 0;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #555;
+  background: #f9fbfb;
+  text-align: center;
+}
     .galeria-grid img:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
 
     /* ===== CONTACTO ===== */
@@ -185,19 +208,68 @@
 <section id="galeria" class="galeria">
   <h2>Galería de Proyectos de Obras Hidráulicas</h2>
   <div class="galeria-grid">
-    <img src="MAGUEYERA 060.jpg" alt="Obra hidráulica">
-    <img src="estudio geofisico.jpg" alt="Estudio Geofísico">
-    <img src="IMG_2988 - copia.JPG" alt="Equipamiento de pozo">
-    <img src="perforacion san martin.jpg" alt="Instalación de equipos">
-    <img src="TREN_LOS_DURAZNOS[1].jpg" alt="Tren de descarga">
-    <img src="VALVULAS[1].jpg" alt="Válvulas">
-    <img src="BOMBA[1].jpg" alt="Bomba">
-    <img src="IMG_20210810_172400.jpg" alt="tuberia y zanja">
-    <img src="IMG_20210813_113420.jpg" alt="tuberia">
-    <img src="IMG_20210825_144737.jpg" alt="tuberia">
-    <img src="IMG_20210827_153100.jpg" alt="tuberia">
-    <img src="DSC02495.JPG" alt="subestacion">
+
+  <div class="galeria-item">
+    <img src="MAGUEYERA 060.jpg" alt="Sistema de riego agrícola">
+    <p>Sistema de riego agrícola</p>
   </div>
+
+  <div class="galeria-item">
+    <img src="estudio geofisico.jpg" alt="Estudio geofísico para pozo profundo">
+    <p>Estudio geofísico para pozo profundo</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="IMG_2988 - copia.JPG" alt="Equipamiento de pozo profundo">
+    <p>Equipamiento de pozo profundo</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="perforacion san martin.jpg" alt="Perforación de pozo profundo">
+    <p>Perforación de pozo profundo</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="TREN_LOS_DURAZNOS[1].jpg" alt="Fabricación de tren de descarga">
+    <p>Fabricación de tren de descarga</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="VALVULAS[1].jpg" alt="Instalación de válvulas hidráulicas">
+    <p>Instalación de válvulas hidráulicas</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="BOMBA[1].jpg" alt="Bomba sumergible instalada">
+    <p>Bomba sumergible instalada</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210810_172400.jpg" alt="TUBERIA">
+    <p>Bomba sumergible instalada</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210813_113420.jpg" alt="TUBERIA">
+    <p>Bomba sumergible instalada</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210825_144737.jpg" alt="TUBERIA">
+    <p>Bomba sumergible instalada</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210827_153100.jpg" alt="TUBERIA">
+    <p>Bomba sumergible instalada</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="DSC02495.JPG" alt="TUBERIA">
+    <p>Bomba sumergible instalada</p>
+  </div>
+</div>
+
 </section>
 
 <!-- CONTACTO -->
