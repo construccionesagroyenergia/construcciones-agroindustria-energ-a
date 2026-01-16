@@ -2,72 +2,60 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Construcciones, Agroindustria y Energía</title>
+<title>Construcciones, Agroindustria y Energía | Pozos Profundos, Riego y Agua Potable</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Empresa especializada en pozos profundos, riego agrícola, agua potable y obras hidráulicas. Proyectos confiables y equipamiento profesional.">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body{
-  margin:0;
   font-family:'Roboto',Arial,sans-serif;
+  margin:0;
   background:#f5f7f8;
   color:#3f3f3f;
+  overflow-x:hidden;
 }
-h1,h2,h3{font-family:'Montserrat',Arial,sans-serif;}
+h1,h2,h3{font-family:'Montserrat',Arial,sans-serif}
 a{text-decoration:none;color:inherit}
 
-/* HEADER */
-.site-header{text-align:center;background:#fff}
-.top-bar{height:90px;background:#0f8fa6}
-.bottom-bar{height:70px;background:#6a8f3a}
-.header-content{padding:40px 20px 50px}
-.header-content img{max-width:340px;margin:0 auto 20px}
-.header-content h1{font-size:34px;margin:20px 0 12px}
-.header-content p{max-width:760px;margin:0 auto 26px;font-size:17px;color:#555}
-.btn{display:inline-block;background:#0f8fa6;color:#fff;padding:16px 36px;border-radius:30px;font-weight:600}
-
-/* SECCIONES */
-section{padding:60px 20px;background:#fff;margin-top:10px}
-section h2{text-align:center;color:#6a8f3a;margin-bottom:30px}
-
-/* SERVICIOS */
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  max-width:1100px;
-  margin:auto;
+/* ===== GALERÍA CARRUSEL ===== */
+.carousel-section{
+  padding:60px 20px;
+  background:#fff;
 }
-.service-card{
-  background:#f9fbfb;
-  padding:30px;
-  border-left:6px solid #0f8fa6;
-}
-.service-card.equipos{border-left-color:#6a8f3a}
-
-/* SLIDER */
-.slider{
-  background:#000;
+.carousel-container{
   position:relative;
-  padding:40px 0;
+  max-width:1200px;
+  margin:auto;
+  overflow:hidden;
 }
-.slide{
-  text-align:center;
+.carousel-track{
+  display:flex;
+  transition:transform 0.6s ease;
 }
-.slide img{
+.carousel-item{
+  min-width:300px;
+  margin:0 12px;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.1);
+}
+.carousel-item img{
   width:100%;
-  max-height:520px;
+  height:220px;
   object-fit:contain;
+  background:#000;
 }
-.caption{
-  background:rgba(0,0,0,0.6);
-  color:#fff;
-  padding:10px;
-  font-size:15px;
+.carousel-item p{
+  padding:12px;
+  font-size:14px;
+  text-align:center;
+  background:#f9fbfb;
+  margin:0;
 }
-.prev,.next{
+.carousel-btn{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
@@ -76,123 +64,81 @@ section h2{text-align:center;color:#6a8f3a;margin-bottom:30px}
   border:none;
   padding:14px;
   cursor:pointer;
-  font-size:20px;
+  z-index:10;
 }
-.prev{left:10px}
-.next{right:10px}
+.carousel-btn.prev{left:10px}
+.carousel-btn.next{right:10px}
 
-/* FOOTER */
-footer{
-  background:#2b2b2b;
-  color:#e0e0e0;
-  padding:40px 20px;
-}
-.footer-content{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:30px;
-  max-width:1100px;
-  margin:auto;
-}
-.footer-content h4{color:#fff}
-
-/* WHATSAPP */
-.fixed{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:#fff;
-  padding:16px 20px;
-  border-radius:50%;
-  font-weight:bold;
+@media(max-width:768px){
+  .carousel-item{min-width:260px}
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
-<div class="top-bar"></div>
-<div class="header-content">
-<img src="logo CAE.png" alt="Logo CAE">
-<h1>Construcciones, Agroindustria y Energía</h1>
-<p>Soluciones integrales en riego, agua potable y pozos profundos</p>
-<a class="btn" href="https://wa.me/522222723013" target="_blank">Cotiza por WhatsApp</a>
-</div>
-<div class="bottom-bar"></div>
-</header>
+<!-- ===== GALERÍA ===== -->
+<section id="galeria" class="carousel-section">
+<h2 style="text-align:center;color:#6a8f3a;margin-bottom:30px">
+Galería de Proyectos de Obras Hidráulicas
+</h2>
 
-<section>
-<h2>Servicios</h2>
-<div class="services-grid">
-<div class="service-card">
-<h3>Obras y Proyectos</h3>
-<ul>
-<li>Equipamiento y rehabilitación de pozos profundos</li>
-<li>Proyectos de riego y agua potable</li>
-<li>Obra hidráulica</li>
-<li>Estudios geofísicos</li>
-</ul>
-</div>
-<div class="service-card equipos">
-<h3>Venta e Instalación de Equipos</h3>
-<ul>
-<li>Bombas sumergibles</li>
-<li>Tubería PVC y ADEME</li>
-<li>Trenes de descarga</li>
-<li>Arrancadores y transformadores</li>
-</ul>
+<div class="carousel-container">
+<button class="carousel-btn prev">&#10094;</button>
+<button class="carousel-btn next">&#10095;</button>
+
+<div class="carousel-track" id="carouselTrack">
+
+<div class="carousel-item"><img src="MAGUEYERA 060.jpg"><p>Riego Agrícola</p></div>
+<div class="carousel-item"><img src="estudio geofisico.jpg"><p>Estudio geofísico para pozo profundo</p></div>
+<div class="carousel-item"><img src="IMG_2988 - copia.JPG"><p>Tubería para Equipamiento de pozo profundo</p></div>
+<div class="carousel-item"><img src="perforacion san martin.jpg"><p>Perforación de pozo profundo</p></div>
+<div class="carousel-item"><img src="TREN_LOS_DURAZNOS[1].jpg"><p>Fabricación e Instalación de Tren de descarga</p></div>
+<div class="carousel-item"><img src="VALVULAS[1].jpg"><p>Instalación de Válvulas hidráulicas</p></div>
+<div class="carousel-item"><img src="BOMBA[1].jpg"><p>Bombas Sumergibles</p></div>
+<div class="carousel-item"><img src="IMG_20210810_172400.jpg"><p>Instalación de Tubería de PVC</p></div>
+<div class="carousel-item"><img src="IMG_20210813_113420.jpg"><p>Suministro de Tubería de PVC</p></div>
+<div class="carousel-item"><img src="IMG_20210825_144737.jpg"><p>Instalación de Tee Hidrante</p></div>
+<div class="carousel-item"><img src="IMG_20210827_153100.jpg"><p>Instalación de Conexiones de PVC</p></div>
+<div class="carousel-item"><img src="DSC02495.JPG"><p>Instalación de Línea eléctrica y Subestación</p></div>
+
 </div>
 </div>
 </section>
-
-<!-- SLIDER -->
-<section class="slider">
-<div class="slide" id="slide"></div>
-<button class="prev">&#10094;</button>
-<button class="next">&#10095;</button>
-</section>
-
-<footer>
-<div class="footer-content">
-<div>
-<h4>Construcciones, Agroindustria y Energía</h4>
-<p>Obras hidráulicas, agroindustriales y energéticas.</p>
-</div>
-<div>
-<h4>Contacto</h4>
-<p>222 272 3013</p>
-<p>222 143 8046</p>
-</div>
-</div>
-</footer>
-
-<a class="fixed" href="https://wa.me/522222723013" target="_blank">WA</a>
 
 <script>
-const images=[
-{src:"MAGUEYERA 060.jpg",text:"Riego Agrícola"},
-{src:"estudio geofisico.jpg",text:"Estudio geofísico"},
-{src:"IMG_2988 - copia.JPG",text:"Equipamiento de pozo"},
-{src:"perforacion san martin.jpg",text:"Perforación"},
-{src:"TREN_LOS_DURAZNOS[1].jpg",text:"Tren de descarga"},
-{src:"VALVULAS[1].jpg",text:"Válvulas"},
-{src:"BOMBA[1].jpg",text:"Bomba sumergible"}
-];
+const track = document.getElementById("carouselTrack");
+const items = document.querySelectorAll(".carousel-item");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 
-let index=0;
-const slide=document.getElementById("slide");
+let index = 0;
+const visible = 3;
 
-function render(){
-slide.innerHTML=`<img src="${images[index].src}">
-<div class="caption">${images[index].text}</div>`;
+function update(){
+  const itemWidth = items[0].offsetWidth + 24;
+  track.style.transform = `translateX(${-index * itemWidth}px)`;
 }
 
-document.querySelector(".next").onclick=()=>{index=(index+1)%images.length;render();}
-document.querySelector(".prev").onclick=()=>{index=(index-1+images.length)%images.length;render();}
-setInterval(()=>{index=(index+1)%images.length;render();},5000);
-render();
+next.onclick = ()=>{
+  index++;
+  if(index > items.length - visible){
+    index = 0;
+  }
+  update();
+};
+
+prev.onclick = ()=>{
+  index--;
+  if(index < 0){
+    index = items.length - visible;
+  }
+  update();
+};
+
+setInterval(()=>{ next.click(); }, 4500);
+window.addEventListener("resize", update);
+update();
 </script>
 
 </body>
