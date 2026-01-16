@@ -86,6 +86,16 @@
     .sector-card { background: #fff; padding: 25px 20px; border-top: 5px solid #0f8fa6; transition: 0.3s; }
     .sector-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
     .sector-card i {color: #0f8fa6;margin-bottom: 12px;}
+    .sectores-alt {background: #f5f7f8;}
+    .sector-row {max-width: 1100px;margin: 0 auto 20px;padding: 30px;display: grid;grid-template-columns: 200px 1fr;gap: 20px;background: #ffffff;border-left: 6px solid #0f8fa6;}
+    .sector-row.alt {border-left-color: #6a8f3a;}
+    .sector-title {font-family: 'Montserrat', Arial, sans-serif;font-size: 20px;font-weight: 700;color: #0f8fa6;}
+    .sector-row.alt .sector-title {color: #6a8f3a;}
+    .sector-desc {font-size: 16px;line-height: 1.7;color: #555;}
+    @media(max-width:768px){
+      .sector-row { grid-template-columns: 1fr;}
+}
+
 
 /* ===== GALERÍA SCROLL PROFESIONAL ===== */
 .galeria-scroll {
@@ -304,18 +314,40 @@
   </div>
 </section>
 
-
   
 <!-- SECTORES -->
-<section id="sectores" class="sectores">
+<section id="sectores" class="sectores-alt">
   <h2>Sectores que atendemos</h2>
-  <div class="sectores-grid">
-    <div class="sector-card"><h3>Sector Agrícola</h3><p>Sistemas de riego, equipamiento de pozos y soluciones hidráulicas.</p></div>
-    <div class="sector-card"><h3>Agua Potable</h3><p>Comités, redes hidráulicas y proyectos de abastecimiento.</p></div>
-    <div class="sector-card"><h3>Industrial</h3><p>Infraestructura hidráulica y equipos para procesos industriales.</p></div>
-    <div class="sector-card"><h3>Construcción</h3><p>Obra civil, líneas de conducción y equipamiento especializado.</p></div>
+
+  <div class="sector-row">
+    <div class="sector-title">Agrícola</div>
+    <div class="sector-desc">
+      Sistemas de riego, equipamiento de pozos profundos y soluciones hidráulicas para producción agrícola.
+    </div>
+  </div>
+
+  <div class="sector-row alt">
+    <div class="sector-title">Agua Potable</div>
+    <div class="sector-desc">
+      Proyectos para comités, redes de distribución, líneas de conducción y abastecimiento.
+    </div>
+  </div>
+
+  <div class="sector-row">
+    <div class="sector-title">Industrial</div>
+    <div class="sector-desc">
+      Infraestructura hidráulica, equipamiento y soluciones técnicas para procesos industriales.
+    </div>
+  </div>
+
+  <div class="sector-row alt">
+    <div class="sector-title">Construcción</div>
+    <div class="sector-desc">
+      Obra civil, líneas hidráulicas y equipamiento especializado para proyectos constructivos.
+    </div>
   </div>
 </section>
+
 
 <!-- GALERÍA -->
 <section id="galeria" class="galeria">
