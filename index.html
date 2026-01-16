@@ -85,6 +85,7 @@
     .sectores-grid { grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); text-align: center; }
     .sector-card { background: #fff; padding: 25px 20px; border-top: 5px solid #0f8fa6; transition: 0.3s; }
     .sector-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+    .sector-card i {color: #0f8fa6;margin-bottom: 12px;}
 
 /* ===== GALERÍA SCROLL PROFESIONAL ===== */
 .galeria-scroll {
@@ -268,20 +269,41 @@
 </section>
   <section class="trust">
   <h2>¿Por qué elegirnos?</h2>
-  <p>
-    En Construcciones, Agroindustria y Energía trabajamos bajo un enfoque técnico, responsable y orientado a resultados.
-    Cada proyecto se desarrolla con planeación adecuada, cumplimiento normativo y selección correcta de equipos y materiales,
-    garantizando soluciones confiables y duraderas.
+
+  <p style="max-width:800px;margin:0 auto 40px;">
+    Desarrollamos proyectos hidráulicos y energéticos con enfoque técnico, cumplimiento normativo
+    y una ejecución responsable, asegurando soluciones funcionales y duraderas.
   </p>
 
-  <ul style="max-width:900px;margin:30px auto 0;list-style:none;padding:0;text-align:left;">
-    <li>• Experiencia en proyectos hidráulicos, agrícolas, de agua potable e industriales.</li>
-    <li>• Planeación técnica conforme a requerimientos operativos y normativos.</li>
-    <li>• Suministro e instalación de equipos adecuados para cada aplicación.</li>
-    <li>• Atención directa y acompañamiento durante todo el proyecto.</li>
-    <li>• Cumplimiento en tiempos, alcances y garantía en trabajos y equipos.</li>
-  </ul>
+  <div class="sectores-grid">
+
+    <div class="sector-card">
+      <i class="fas fa-drafting-compass fa-2x"></i>
+      <h3>Planeación técnica</h3>
+      <p>Cada proyecto se diseña conforme a condiciones reales de operación y requerimientos normativos.</p>
+    </div>
+
+    <div class="sector-card">
+      <i class="fas fa-cogs fa-2x"></i>
+      <h3>Equipos adecuados</h3>
+      <p>Seleccionamos e instalamos equipos confiables, acordes a cada aplicación hidráulica o energética.</p>
+    </div>
+
+    <div class="sector-card">
+      <i class="fas fa-user-check fa-2x"></i>
+      <h3>Acompañamiento directo</h3>
+      <p>Atención personalizada antes, durante y después de la ejecución del proyecto.</p>
+    </div>
+
+    <div class="sector-card">
+      <i class="fas fa-shield-alt fa-2x"></i>
+      <h3>Cumplimiento y garantía</h3>
+      <p>Respaldamos nuestros trabajos y equipos, cumpliendo tiempos, alcances y calidad.</p>
+    </div>
+
+  </div>
 </section>
+
 
   
 <!-- SECTORES -->
