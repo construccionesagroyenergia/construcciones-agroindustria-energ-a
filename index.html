@@ -19,12 +19,40 @@ body{
 }
 h1,h2,h3{font-family:'Montserrat',Arial,sans-serif}
 a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 
-/* ===== GALERÍA CARRUSEL ===== */
-.carousel-section{
-  padding:60px 20px;
-  background:#fff;
-}
+/* HEADER */
+.site-header{text-align:center;background:#fff}
+.top-bar{height:90px;background:#0f8fa6}
+.bottom-bar{height:70px;background:#6a8f3a}
+.header-content{padding:40px 20px 50px}
+.header-content img{max-width:340px;margin:auto}
+.header-content h1{font-size:34px;margin:20px 0 10px}
+.header-content p{max-width:760px;margin:auto;font-size:17px;color:#555}
+.btn{display:inline-block;margin-top:25px;background:#0f8fa6;color:#fff;padding:16px 36px;border-radius:30px;font-weight:600}
+
+/* NAV */
+nav{position:absolute;top:20px;right:20px}
+nav a{margin:0 10px;color:#fff;font-weight:500}
+
+/* SECTIONS */
+section{padding:60px 20px;background:#fff;margin-top:10px}
+section h2{text-align:center;color:#6a8f3a;margin-bottom:30px}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;max-width:1100px;margin:auto}
+.service-card{background:#f9fbfb;padding:30px;border-left:6px solid #0f8fa6}
+.service-card.equipos{border-left-color:#6a8f3a}
+
+/* TRUST & NOSOTROS */
+.trust,.nosotros{text-align:center;background:#f9fbfb}
+
+/* SECTORES */
+.sectores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;max-width:1100px;margin:auto;text-align:center}
+.sector-card{background:#fff;padding:25px;border-top:5px solid #0f8fa6}
+
+/* ===== CARRUSEL GALERÍA ===== */
+.carousel-section{background:#fff}
 .carousel-container{
   position:relative;
   max-width:1200px;
@@ -64,12 +92,31 @@ a{text-decoration:none;color:inherit}
   border:none;
   padding:14px;
   cursor:pointer;
-  z-index:10;
 }
 .carousel-btn.prev{left:10px}
 .carousel-btn.next{right:10px}
 
+/* CONTACTO */
+.contacto{text-align:center}
+
+/* FOOTER */
+footer{background:#2b2b2b;color:#e0e0e0;padding:40px 20px}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:auto}
+
+/* WHATSAPP */
+.fixed{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:#fff;
+  padding:16px 20px;
+  border-radius:50%;
+  font-weight:bold;
+}
+
 @media(max-width:768px){
+  nav{position:static;margin-bottom:15px}
   .carousel-item{min-width:260px}
 }
 </style>
@@ -77,67 +124,136 @@ a{text-decoration:none;color:inherit}
 
 <body>
 
-<!-- ===== GALERÍA ===== -->
-<section id="galeria" class="carousel-section">
-<h2 style="text-align:center;color:#6a8f3a;margin-bottom:30px">
-Galería de Proyectos de Obras Hidráulicas
-</h2>
+<header class="site-header">
+<div class="top-bar"></div>
 
-<div class="carousel-container">
-<button class="carousel-btn prev">&#10094;</button>
-<button class="carousel-btn next">&#10095;</button>
+<nav>
+<a href="#servicios">Servicios</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#sectores">Sectores</a>
+<a href="#galeria">Galería</a>
+<a href="#contacto">Contacto</a>
+</nav>
 
-<div class="carousel-track" id="carouselTrack">
+<div class="header-content">
+<img src="logo CAE.png" alt="Logo CAE">
+<h1>Construcciones, Agroindustria y Energía</h1>
+<p>Soluciones integrales en riego, agua potable y pozos profundos</p>
+<a class="btn" href="https://wa.me/522222723013" target="_blank">Cotiza por WhatsApp</a>
+</div>
 
-<div class="carousel-item"><img src="MAGUEYERA 060.jpg"><p>Riego Agrícola</p></div>
-<div class="carousel-item"><img src="estudio geofisico.jpg"><p>Estudio geofísico para pozo profundo</p></div>
-<div class="carousel-item"><img src="IMG_2988 - copia.JPG"><p>Tubería para Equipamiento de pozo profundo</p></div>
-<div class="carousel-item"><img src="perforacion san martin.jpg"><p>Perforación de pozo profundo</p></div>
-<div class="carousel-item"><img src="TREN_LOS_DURAZNOS[1].jpg"><p>Fabricación e Instalación de Tren de descarga</p></div>
-<div class="carousel-item"><img src="VALVULAS[1].jpg"><p>Instalación de Válvulas hidráulicas</p></div>
-<div class="carousel-item"><img src="BOMBA[1].jpg"><p>Bombas Sumergibles</p></div>
-<div class="carousel-item"><img src="IMG_20210810_172400.jpg"><p>Instalación de Tubería de PVC</p></div>
-<div class="carousel-item"><img src="IMG_20210813_113420.jpg"><p>Suministro de Tubería de PVC</p></div>
-<div class="carousel-item"><img src="IMG_20210825_144737.jpg"><p>Instalación de Tee Hidrante</p></div>
-<div class="carousel-item"><img src="IMG_20210827_153100.jpg"><p>Instalación de Conexiones de PVC</p></div>
-<div class="carousel-item"><img src="DSC02495.JPG"><p>Instalación de Línea eléctrica y Subestación</p></div>
+<div class="bottom-bar"></div>
+</header>
 
+<section id="servicios">
+<h2>Servicios</h2>
+<div class="services-grid">
+<div class="service-card">
+<h3>Obras y Proyectos</h3>
+<ul>
+<li>Equipamiento y rehabilitación de pozos profundos</li>
+<li>Riego agrícola y agua potable</li>
+<li>Obra hidráulica y conducción</li>
+<li>Estudios geofísicos</li>
+<li>Carpetas CONAGUA</li>
+</ul>
+</div>
+<div class="service-card equipos">
+<h3>Venta e Instalación de Equipos</h3>
+<ul>
+<li>Bombas sumergibles y solares</li>
+<li>Tubería PVC y ADEME</li>
+<li>Válvulas, hidrantes y medidores</li>
+<li>Arrancadores y transformadores</li>
+</ul>
 </div>
 </div>
 </section>
 
-<script>
-const track = document.getElementById("carouselTrack");
-const items = document.querySelectorAll(".carousel-item");
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+<section class="trust">
+<h2>Compromiso y Experiencia</h2>
+<p>Ejecutamos proyectos hidráulicos, agroindustriales y energéticos con cumplimiento normativo y garantía.</p>
+</section>
 
-let index = 0;
-const visible = 3;
+<section id="nosotros" class="nosotros">
+<h2>Nosotros</h2>
+<p>Empresa enfocada en soluciones técnicas confiables, planeación correcta y equipos de calidad.</p>
+</section>
+
+<section id="sectores">
+<h2>Sectores que atendemos</h2>
+<div class="sectores-grid">
+<div class="sector-card"><h3>Agrícola</h3></div>
+<div class="sector-card"><h3>Agua Potable</h3></div>
+<div class="sector-card"><h3>Industrial</h3></div>
+<div class="sector-card"><h3>Construcción</h3></div>
+</div>
+</section>
+
+<section id="galeria" class="carousel-section">
+<h2>Galería de Proyectos</h2>
+<div class="carousel-container">
+<button class="carousel-btn prev">&#10094;</button>
+<button class="carousel-btn next">&#10095;</button>
+<div class="carousel-track" id="carouselTrack">
+<div class="carousel-item"><img src="MAGUEYERA 060.jpg"><p>Riego Agrícola</p></div>
+<div class="carousel-item"><img src="estudio geofisico.jpg"><p>Estudio geofísico</p></div>
+<div class="carousel-item"><img src="IMG_2988 - copia.JPG"><p>Tubería de pozo</p></div>
+<div class="carousel-item"><img src="perforacion san martin.jpg"><p>Perforación</p></div>
+<div class="carousel-item"><img src="TREN_LOS_DURAZNOS[1].jpg"><p>Tren de descarga</p></div>
+<div class="carousel-item"><img src="VALVULAS[1].jpg"><p>Válvulas</p></div>
+<div class="carousel-item"><img src="BOMBA[1].jpg"><p>Bombas</p></div>
+<div class="carousel-item"><img src="DSC02495.JPG"><p>Subestación</p></div>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="contacto">
+<h2>Contacto</h2>
+<p>
+<strong>WhatsApp y llamadas:</strong><br>
+<a href="https://wa.me/522222723013">222 272 3013</a><br>
+222 143 8046<br><br>
+<strong>Correo:</strong><br>
+<a href="mailto:construccionesagroindustriayenergia@outlook.com">construccionesagroindustriayenergia@outlook.com</a>
+</p>
+</section>
+
+<footer>
+<div class="footer-content">
+<div>
+<h4>Construcciones, Agroindustria y Energía</h4>
+<p>Obras hidráulicas, agroindustriales y energéticas.</p>
+</div>
+<div>
+<h4>Redes</h4>
+<p>
+<i class="fab fa-facebook"></i> Facebook<br>
+<i class="fab fa-instagram"></i> Instagram<br>
+<i class="fab fa-tiktok"></i> TikTok
+</p>
+</div>
+</div>
+</footer>
+
+<a class="fixed" href="https://wa.me/522222723013" target="_blank">WA</a>
+
+<script>
+const track=document.getElementById("carouselTrack");
+const items=document.querySelectorAll(".carousel-item");
+const prev=document.querySelector(".prev");
+const next=document.querySelector(".next");
+let index=0;
+const visible=3;
 
 function update(){
-  const itemWidth = items[0].offsetWidth + 24;
-  track.style.transform = `translateX(${-index * itemWidth}px)`;
+  const w=items[0].offsetWidth+24;
+  track.style.transform=`translateX(${-index*w}px)`;
 }
-
-next.onclick = ()=>{
-  index++;
-  if(index > items.length - visible){
-    index = 0;
-  }
-  update();
-};
-
-prev.onclick = ()=>{
-  index--;
-  if(index < 0){
-    index = items.length - visible;
-  }
-  update();
-};
-
-setInterval(()=>{ next.click(); }, 4500);
-window.addEventListener("resize", update);
+next.onclick=()=>{index++;if(index>items.length-visible){index=0;}update();}
+prev.onclick=()=>{index--;if(index<0){index=items.length-visible;}update();}
+setInterval(()=>next.click(),4500);
+window.addEventListener("resize",update);
 update();
 </script>
 
