@@ -96,67 +96,60 @@
       .sector-row { grid-template-columns: 1fr;}
 }
 
-
-/* ===== GALERÍA SCROLL PROFESIONAL ===== */
+/* ===== GALERÍA SCROLL MANUAL ===== */
 .galeria-scroll {
   display: flex;
+  gap: 24px;
   overflow-x: auto;
+  padding: 10px 0 20px;
   scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding-bottom: 10px;
+}
+
+.galeria-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.galeria-scroll::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 4px;
 }
 
 .galeria-item {
-  flex: 0 0 100%;
+  flex: 0 0 85%;
+  max-width: 85%;
   scroll-snap-align: center;
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .galeria-item img {
   width: 100%;
-  height: auto;
-  max-height: 500px;
+  height: 420px;
   object-fit: contain;
   background: #000;
 }
 
 .galeria-item p {
+  margin: 0;
   padding: 12px;
   text-align: center;
   font-size: 14px;
-  background: #f9fbfb;
-}
-
-.galeria-item p {
-  margin: 0;
-  padding: 12px 14px;
-  font-size: 14px;
   color: #555;
   background: #f9fbfb;
-  text-align: center;
-}
-  .galeria-item:hover
-    .galeria-item {
-  min-width: 100%;
-}
-  .galeria-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-  .galeria-scroll::-webkit-scrollbar-thumb {
-  background: #0f8fa6;
-  border-radius: 10px;
-}
-.galeria-item {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-.galeria-item {
-  transition: transform 0.3s ease;
 }
 
-.galeria-item:hover {
-  transform: scale(1.02);
+/* Móvil */
+@media (max-width: 768px) {
+  .galeria-item {
+    flex: 0 0 95%;
+    max-width: 95%;
+  }
+
+  .galeria-item img {
+    height: 280px;
+  }
 }
 
     /* ===== CONTACTO ===== */
@@ -493,36 +486,72 @@
 
 <a class="fixed" href="https://wa.me/522222723013" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
   
-<script>
-const galeria = document.querySelector('.galeria-scroll');
-let index = 0;
-let intervalo = null;
+<section id="galeria" class="galeria">
+  <h2>Galería de Proyectos de Obras Hidráulicas</h2>
 
-function iniciarGaleria() {
-  if (!galeria || intervalo) return;
+  <div class="galeria-scroll">
 
-  intervalo = setInterval(() => {
-    index = (index + 1) % galeria.children.length;
-    galeria.scrollTo({
-      left: galeria.children[index].offsetLeft,
-      behavior: 'smooth'
-    });
-  }, 4500);
-}
+    <div class="galeria-item">
+      <img src="MAGUEYERA 060.jpg" alt="Sistema de riego agrícola" loading="lazy">
+      <p>Riego agrícola</p>
+    </div>
 
-function detenerGaleria() {
-  if (intervalo) {
-    clearInterval(intervalo);
-    intervalo = null;
-  }
-}
+    <div class="galeria-item">
+      <img src="estudio geofisico.jpg" alt="Estudio geofísico para pozo profundo" loading="lazy">
+      <p>Estudio geofísico</p>
+    </div>
 
-galeria.addEventListener('mouseenter', detenerGaleria);
-galeria.addEventListener('mouseleave', iniciarGaleria);
+    <div class="galeria-item">
+    <img src="IMG_2988 - copia.JPG" alt="Tuberia para Equipamiento de pozo profundo">
+    <p>TuberÍa para Equipamiento de pozo profundo</p>
+  </div>
+     <div class="galeria-item">
+    <img src="perforacion san martin.jpg" alt="Perforación de pozo profundo">
+    <p>Perforación de pozo profundo</p>
+  </div>
 
-window.addEventListener('load', iniciarGaleria);
-</script>
+  <div class="galeria-item">
+    <img src="TREN_LOS_DURAZNOS[1].jpg" alt="Fabricación de tren de descarga">
+    <p>Fabricación e Instalación de Tren de descarga</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="VALVULAS[1].jpg" alt="Instalación de válvulas hidráulicas">
+    <p>Instalación de Válvulas hidráulicas</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="BOMBA[1].jpg" alt="Bomba sumergible">
+    <p>Bombas Sumergíbles</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210810_172400.jpg" alt="TUBERIA">
+    <p>Instalación de Tubería de PVC</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210813_113420.jpg" alt="TUBERIA">
+    <p>Suministro de Tubería de PVC</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210825_144737.jpg" alt="TUBERIA">
+    <p>Instalación de Tee Hidrante y Tee para Válvula de Aire de PVC</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="IMG_20210827_153100.jpg" alt="TUBERIA">
+    <p>Instalación de Conexiones de PVC</p>
+  </div>
+
+    <div class="galeria-item">
+    <img src="DSC02495.JPG" alt="suminstro electrico">
+    <p>Instalacion de Linea eléctrica y Subestación</p>
+  </div>     
+</div>
   
+</section>
 
 
 </body>
