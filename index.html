@@ -110,6 +110,9 @@
   text-align: center;
 }
   .galeria-item:hover
+    .galeria-item {
+  min-width: 100%;
+}
 
     /* ===== CONTACTO ===== */
     section.contacto { text-align: center; }
@@ -280,6 +283,7 @@
     <img src="DSC02495.JPG" alt="suminstro electrico"loading="lazy">
     <p>Instalacion de Linea eléctrica y Subestación</p>
   </div>
+
 </div>
 
 </section>
@@ -343,27 +347,31 @@
 <script>
 const galeria = document.querySelector('.galeria-scroll');
 let index = 0;
-let iniciado = false;
+let intervalo = null;
 
 function iniciarGaleria() {
-  if (iniciado || !galeria) return;
-  iniciado = true;
+  if (!galeria || intervalo) return;
 
-  setInterval(() => {
+  intervalo = setInterval(() => {
     index = (index + 1) % galeria.children.length;
     galeria.scrollTo({
       left: galeria.children[index].offsetLeft,
       behavior: 'smooth'
     });
-  }, 5000);
+  }, 4500);
 }
 
-window.addEventListener('scroll', () => {
-  const rect = galeria.getBoundingClientRect();
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    iniciarGaleria();
+function detenerGaleria() {
+  if (intervalo) {
+    clearInterval(intervalo);
+    intervalo = null;
   }
-});
+}
+
+galeria.addEventListener('mouseenter', detenerGaleria);
+galeria.addEventListener('mouseleave', iniciarGaleria);
+
+window.addEventListener('load', iniciarGaleria);
 </script>
 
 
