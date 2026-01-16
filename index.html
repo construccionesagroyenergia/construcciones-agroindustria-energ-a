@@ -335,14 +335,31 @@
 
 <a class="fixed" href="https://wa.me/522222723013" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
   <script>
+<script>
 const galeria = document.querySelector('.galeria-grid');
 let index = 0;
+let iniciado = false;
 
-setInterval(() => {
-  if (!galeria) return;
-  index = (index + 1) % galeria.children.length;
-  galeria.children[index].scrollIntoView({ behavior: 'smooth' });
-}, 5000);
+function iniciarGaleria() {
+  if (iniciado || !galeria) return;
+  iniciado = true;
+
+  setInterval(() => {
+    index = (index + 1) % galeria.children.length;
+    galeria.children[index].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start'
+    });
+  }, 5000);
+}
+
+window.addEventListener('scroll', () => {
+  const rect = galeria.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    iniciarGaleria();
+  }
+});
 </script>
 
 </body>
