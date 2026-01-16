@@ -214,7 +214,7 @@
 <!-- GALERÍA -->
 <section id="galeria" class="galeria">
   <h2>Galería de Proyectos de Obras Hidráulicas</h2>
-  <div class="galeria-grid">
+  <div class="galeria-scroll">
 
   <div class="galeria-item">
     <img src="MAGUEYERA 060.jpg" alt="Sistema de riego agrícola"loading="lazy">
@@ -336,7 +336,7 @@
 <a class="fixed" href="https://wa.me/522222723013" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
   <script>
 <script>
-const galeria = document.querySelector('.galeria-grid');
+const galeria = document.querySelector('.galeria-scroll');
 let index = 0;
 let iniciado = false;
 
@@ -346,10 +346,9 @@ function iniciarGaleria() {
 
   setInterval(() => {
     index = (index + 1) % galeria.children.length;
-    galeria.children[index].scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'start'
+    galeria.scrollTo({
+      left: galeria.children[index].offsetLeft,
+      behavior: 'smooth'
     });
   }, 5000);
 }
@@ -361,6 +360,7 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+
 
 </body>
 </html>
