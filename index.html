@@ -125,6 +125,65 @@
   margin-right: 8px;
   color: #0f8fa6;
 }
+    /* ===== SLIDER ===== */
+.slider {
+  background: #f5f7f8;
+  padding: 50px 0;
+}
+
+.slider-container {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+@media(max-width:768px){
+  .slide img { height: 260px; }
+}
+
   </style>
 </head>
 
@@ -150,6 +209,25 @@
 
   <div class="bottom-bar"></div>
 </header>
+  <section class="slider">
+  <div class="slider-container">
+    <div class="slide active">
+      <img src="perforacion san martin.jpg" alt="Perforación de pozo profundo">
+      <div class="caption">Perforación de Pozos Profundos</div>
+    </div>
+    <div class="slide">
+      <img src="MAGUEYERA 060.jpg" alt="Sistema de riego agrícola">
+      <div class="caption">Sistemas de Riego Agrícola</div>
+    </div>
+    <div class="slide">
+      <img src="TREN_LOS_DURAZNOS[1].jpg" alt="Tren de descarga">
+      <div class="caption">Fabricación de Trenes de Descarga</div>
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
 
 <!-- SERVICIOS -->
 <section id="servicios">
@@ -279,17 +357,21 @@
     <strong>Teléfono 1:</strong><br><a href="https://wa.me/522222723013">222 272 3013</a><br><br>
     <strong>Teléfono 2:</strong><br><a href="tel:+522221438046">222 143 8046</a><br><br>
     <strong>Correo:</strong><br><a href="mailto:construccionesagroindustriayenergia@outlook.com">construccionesagroindustriayenergia@outlook.com</a><br><br>
-    <strong>Redes sociales:</strong><br>
-    <p><strong>Atención en:</strong> Puebla y estados cercanos</p>
-<a href="https://www.facebook.com/construccionesagroindustriayenergia/" target="_blank" rel="noopener">
-  <i class="fab fa-facebook"></i> Facebook
-</a> · 
-<a href="https://www.instagram.com/construccionesagroyenergia?igsh=MWFhczR1Y210a2R6ag==" target="_blank" rel="noopener">
-  <i class="fab fa-instagram"></i> Instagram
-</a> · 
-<a href="https://www.tiktok.com/@construccionesagroyenerg?_r=1&_t=ZS-933i8vdq6Tv" target="_blank" rel="noopener" target="_blank" rel="noopener">
-  <i class="fab fa-tiktok"></i> TikTok
-</a>
+    <p>
+  <strong>Redes sociales:</strong><br><br>
+  <strong>Atención en:</strong> Puebla y estados cercanos<br><br>
+
+  <a href="https://www.facebook.com/construccionesagroindustriayenergia/" target="_blank" rel="noopener">
+    <i class="fab fa-facebook"></i> Facebook
+  </a> · 
+  <a href="https://www.instagram.com/construccionesagroyenergia?igsh=MWFhczR1Y210a2R6ag==" target="_blank" rel="noopener">
+    <i class="fab fa-instagram"></i> Instagram
+  </a> · 
+  <a href="https://www.tiktok.com/@construccionesagroyenerg?_r=1&_t=ZS-933i8vdq6Tv" target="_blank" rel="noopener">
+    <i class="fab fa-tiktok"></i> TikTok
+  </a>
+</p>
+
 
 </section>
 
@@ -327,5 +409,30 @@
 </footer>
 
 <a class="fixed" href="https://wa.me/522222723013" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
+ <script>
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  document.querySelector('.next').onclick = () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  };
+
+  document.querySelector('.prev').onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  };
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 5000);
+</script>
+ 
 </body>
 </html>
