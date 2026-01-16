@@ -278,16 +278,15 @@
 }
    /* ===== BOMBEO SOLAR ===== */
 .solar {
-  background: linear-gradient(135deg, #6a8f3a, #0f8fa6);
+  background: linear-gradient(135deg, #4f6f2f, #0a5c6f);
   padding: 90px 20px;
   color: #ffffff;
   text-align: center;
 }
 
 .solar h2 {
-  color: #ffffff;
-  font-size: 30px;
-  margin-bottom: 20px;
+  font-size: 32px;
+  letter-spacing: 0.5px;
 }
 
 .solar-intro {
@@ -297,7 +296,7 @@
   line-height: 1.8;
   color: #eef5e9;
 }
-      .solar-highlight {
+  .solar-grid solar-highlight {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
@@ -338,6 +337,21 @@
 
 .btn-solar:hover {
   background: #eef5e9;
+}
+  .solar-badge {
+  display: inline-block;
+  background: #ffffff;
+  color: #6a8f3a;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+  .solar {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
   </style>
@@ -593,8 +607,9 @@
 
   </div>
 </section>
-   <!-- BOMBE0 SOLAR -->
+   <!-- BOMBEO SOLAR -->
 <section class="solar">
+  <span class="solar-badge">Solución energética para el campo</span>
   <h2>Bombeo solar</h2>
 
   <p class="solar-intro">
@@ -773,8 +788,5 @@
 
 <a class="fixed" href="https://wa.me/522222723013" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
   
-
-
-
 </body>
 </html>
