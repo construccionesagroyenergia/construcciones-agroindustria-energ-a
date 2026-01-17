@@ -373,6 +373,46 @@
   font-size: 15px;
   padding: 14px 36px;
 }
+/* ===== BOTÓN FLOTANTE WHATSAPP MEJORADO ===== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float i {
+  font-size: 22px;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* En pantallas muy pequeñas, solo ícono */
+@media (max-width: 480px) {
+  .whatsapp-float span {
+    display: none;
+  }
+
+  .whatsapp-float {
+    padding: 14px;
+    border-radius: 50%;
+  }
+}
 
   </style>
 </head>
@@ -808,8 +848,13 @@
 </p>
   </div>
 </footer>
-
-<a class="fixed" href="https://wa.me/522222723013" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
-  
+<a class="whatsapp-float"
+   href="https://wa.me/522222723013"
+   target="_blank"
+   aria-label="Contactar por WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span>WhatsApp</span>
+</a>
+ 
 </body>
 </html>
