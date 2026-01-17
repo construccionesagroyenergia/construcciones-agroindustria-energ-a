@@ -276,38 +276,51 @@
   margin-right: 8px;
   color: #0f8fa6;
 }
-   /* ===== BOMBEO SOLAR ===== */
+/* ===== BOMBEO SOLAR (CORREGIDO) ===== */
 .solar {
-  background: #ffffff;
+  background: linear-gradient(135deg, #0f8fa6, #0a6c83);
   border-top: 6px solid #0f8fa6;
   border-bottom: 6px solid #6a8f3a;
+  padding: 80px 20px;
+  text-align: center;
 }
+
 .solar h2 {
   font-size: 34px;
   letter-spacing: 0.5px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
+
+.solar-badge {
+  display: inline-block;
+  font-size: 13px;
+  color: #dff3e2;
+  margin-bottom: 10px;
+}
+
 .solar-intro {
   max-width: 820px;
   margin: 0 auto 50px;
   font-size: 17px;
   line-height: 1.8;
-  color: #eef5e9;
+  color: #eaf7f4;
 }
-  .solar-grid.solar-highlight {
+
+.solar-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto 40px;
 }
 
 .solar-item {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.15);
   padding: 40px 30px;
   border-radius: 14px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .solar-item i {
@@ -325,32 +338,22 @@
 .solar-item p {
   font-size: 15px;
   line-height: 1.7;
-  color: #eef5e9;
+  color: #eaf7f4;
 }
-  .btn-solar {
-  background: #0f8fa6;
-  color: #ffffff;
-  border-radius: 30px;
-}
-    
-.btn-solar:hover {
-  background: #eef5e9;
-}
- .solar-badge {
+
+.btn-solar {
   display: inline-block;
-  margin-bottom: 10px;
-  font-size: 13px;
+  background: #6a8f3a;
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
 }
-  .solar {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-      .product-card {
-  background: #f9fbfb;
-  border-left: 5px solid #0f8fa6;
-}
-.product-card.solar {
-  border-left-color: #6a8f3a;
+
+.btn-solar:hover {
+  background: #587730;
+  transform: translateY(-2px);
 }
   </style>
 </head>
